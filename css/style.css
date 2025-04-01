@@ -1,0 +1,1569 @@
+/* FreeLunch Ethiopia - Main Stylesheet */
+
+/* Variables */
+:root {
+    --primary-color: #006241; /* Ethiopian green */
+    --secondary-color: #f1c40f; /* Gold/yellow from Ethiopian flag */
+    --accent-color: #e74c3c; /* Red from Ethiopian flag */
+    --text-color: #333;
+    --light-text: #f5f5f5;
+    --background-color: #f9f9f9;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #004d33;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: #d4ac0d;
+    transform: translateY(-2px);
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.logo .ethiopia {
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 98, 65, 0.8), rgba(0, 98, 65, 0.9)), url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+    padding: 0 1rem;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Countdown */
+.countdown-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#countdown div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#countdown span:first-child {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#countdown .label {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.how-it-works h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Prizes Section */
+.prizes {
+    background-color: #f0f8f4;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.prizes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.prizes h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.prize-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prize-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.prize-card.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--secondary-color);
+}
+
+.prize-card.featured::before {
+    content: 'Popular';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-bottom-left-radius: 10px;
+}
+
+.prize-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.prize-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.prize-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Winners Section */
+.winners {
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.winners h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.winners h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.winners-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.winner-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    width: 300px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.winner-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.winner-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.winner-prize {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.winner-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalopen 0.4s;
+}
+
+.modal-content.dashboard {
+    max-width: 800px;
+}
+
+/* Settings Tab */
+.settings-section {
+    padding: 20px 0;
+}
+
+/* Withdrawal History Styling */
+.withdrawal-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.withdrawal-header h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.withdrawal-header p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.withdrawal-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.withdrawal-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.withdrawal-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.withdrawal-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.withdrawal-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.withdrawal-status.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.withdrawal-status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.withdrawal-status.failed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.withdrawal-secondary-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.withdrawal-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #777;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
+}
+
+.withdrawal-meta i {
+    margin-right: 5px;
+}
+
+.view-all-btn {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.saved-phone-list {
+    margin: 10px 0;
+}
+
+.saved-phone-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.remove-phone-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-phone-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.no-saved-phones {
+    color: #777;
+    font-style: italic;
+}
+
+.settings-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.settings-notification i {
+    margin-right: 8px;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--text-color);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #777;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Improve form accessibility on mobile */
+input, button, select, textarea {
+    font-size: 16px; /* Prevents zoom on mobile */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Dashboard Styles */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.user-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.referral-section,
+.subscription-section,
+.withdrawal-section {
+    margin-bottom: 2rem;
+}
+
+/* Withdrawal Styles */
+.withdrawal-stats {
+    margin: 1.5rem 0;
+}
+
+#withdrawal-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+#withdrawal-form input[type="tel"],
+#withdrawal-form input[type="number"] {
+    font-size: 16px; /* Prevents zoom on mobile */
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Payment Methods Styles */
+.payment-methods {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.payment-method {
+    flex: 1;
+    position: relative;
+}
+
+.payment-method input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.payment-method label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.payment-method label i {
+    font-size: 1.2rem;
+}
+
+.payment-method input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 98, 65, 0.1);
+    color: var(--primary-color);
+}
+
+.payment-method:hover label {
+    border-color: var(--primary-color);
+}
+
+/* Payment method specific styles */
+.payment-method:has(#tellebir:checked) i,
+.payment-method.selected:has(#tellebir) i,
+.withdrawal-method.tellebir i {
+    color: #F44336; /* Ethio Telecom red */
+}
+
+.payment-method:has(#cbebirr:checked) i,
+.payment-method.selected:has(#cbebirr) i,
+.withdrawal-method.cbebirr i {
+    color: #1976D2; /* CBE blue */
+}
+
+.helper-text {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.helper-text i {
+    margin-right: 5px;
+    color: #2196F3;
+}
+
+.withdrawal-history {
+    margin-top: 2rem;
+}
+
+/* Enhanced withdrawal item styling */
+.withdrawal-item {
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.withdrawal-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.withdrawal-details {
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ddd;
+}
+
+.withdrawal-details.tellebir {
+    border-left-color: #F44336; /* Ethio Telecom red */
+    background-color: rgba(244, 67, 54, 0.05);
+}
+
+.withdrawal-details.cbebirr {
+    border-left-color: #1976D2; /* CBE blue */
+    background-color: rgba(25, 118, 210, 0.05);
+}
+
+.withdrawal-method .provider {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-left: 5px;
+}
+
+/* Withdrawal notification */
+.withdrawal-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    max-width: 400px;
+    z-index: 1000;
+    overflow: hidden;
+    animation: slide-in 0.5s ease forwards;
+}
+
+@keyframes slide-in {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.withdrawal-notification.fade-out {
+    animation: slide-out 0.5s ease forwards;
+}
+
+@keyframes slide-out {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+.notification-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.notification-icon.tellebir {
+    background-color: #F44336; /* Ethio Telecom red */
+}
+
+.notification-icon.cbebirr {
+    background-color: #1976D2; /* CBE blue */
+}
+
+.notification-content {
+    padding: 15px;
+    flex: 1;
+}
+
+.notification-content h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.notification-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #333;
+}
+
+.notification-details {
+    margin: 5px 0;
+    color: #555;
+}
+
+.notification-status {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.notification-status .pending {
+    color: #FF9800;
+    font-weight: bold;
+}
+
+.notification-time {
+    margin: 5px 0;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.notification-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.notification-close:hover {
+    color: #333;
+}
+
+/* Payment method selection styling */
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    flex: 1;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-method:hover {
+    border-color: #bdbdbd;
+    background-color: #f9f9f9;
+}
+
+.payment-method.selected {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.payment-method.selected:has(#tellebir) {
+    border-color: #F44336;
+    background-color: rgba(244, 67, 54, 0.05);
+}
+
+.payment-method.selected:has(#cbebirr) {
+    border-color: #1976D2;
+    background-color: rgba(25, 118, 210, 0.05);
+}
+
+.payment-method label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.payment-method i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.withdrawal-history {    
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.withdrawal-history h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.withdrawal-item {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.withdrawal-item:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.withdrawal-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.withdrawal-amount {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.withdrawal-method {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #555;
+}
+
+.withdrawal-status {
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.withdrawal-status.completed {
+    background-color: #27ae60;
+    color: white;
+}
+
+.withdrawal-status.pending {
+    background-color: #f39c12;
+    color: white;
+}
+
+.withdrawal-status.failed {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.no-withdrawals {
+    color: #777;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+.referral-link-container {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.referral-link-container input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    font-size: 0.9rem;
+}
+
+.referral-link-container button {
+    border-radius: 0 4px 4px 0;
+}
+
+.youtube-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.channel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.channel img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.channel-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscribe-btn {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.subscribe-btn:hover {
+    background-color: #c0392b;
+}
+
+.subscribe-btn.subscribed {
+    background-color: #27ae60;
+}
+
+.btn-logout {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-left: auto;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Logout Notification */
+.logout-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #27ae60;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2000;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.logout-notification i {
+    font-size: 1.2rem;
+}
+
+.logout-notification.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: var(--light-text);
+    padding: 4rem 1rem 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-logo h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo .ethiopia {
+    color: var(--accent-color);
+}
+
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-links h3::after,
+.footer-contact h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links ul li a {
+    color: #ddd;
+}
+
+.footer-links ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-contact p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .prize-card.featured {
+        transform: scale(1);
+    }
+    
+    .user-info {
+        flex-wrap: wrap;
+    }
+    
+    .btn-logout {
+        margin-top: 1rem;
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+        padding: 0.5rem;
+        margin-right: -0.5rem;
+    }
+    
+    nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background-color: var(--card-bg);
+        transition: var(--transition);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        overflow-y: auto;
+        padding-bottom: 30px; /* Add padding at bottom for better scrolling */
+    }
+    
+    nav.active {
+        left: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    
+    nav ul li {
+        margin: 1rem 0;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+        /* Increase touch target size */
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    #countdown span:first-child {
+        font-size: 2rem;
+        min-width: 60px;
+    }
+    
+    .step {
+        min-width: 100%;
+    }
+    
+    .prize-card {
+        min-width: 100%;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .modal-content.dashboard {
+        padding: 1.5rem 1rem;
+    }
+    
+    .form-group input {
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-radius: 8px;
+    }
+    
+    .btn-primary, .btn-secondary, .subscribe-btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+    
+    .channel-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .channel {
+        padding: 1.2rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+    
+    .subscribe-btn {
+        width: 100%;
+        padding: 10px 0;
+        min-height: 44px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .user-details {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-logout {
+        width: 100%;
+        padding: 12px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        margin-top: 60px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    #countdown {
+        gap: 0.8rem;
+    }
+    
+    #countdown span:first-child {
+        font-size: 1.5rem;
+        min-width: 50px;
+        padding: 0.5rem;
+        height: 50px;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        min-height: 48px;
+        font-size: 16px;
+    }
+    
+    .referral-link-container {
+        flex-direction: column;
+    }
+    
+    .referral-link-container input {
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .referral-link-container button {
+        border-radius: 8px;
+        width: 100%;
+        padding: 12px;
+        min-height: 48px;
+    }
+    
+    .close {
+        font-size: 2rem;
+        padding: 0.5rem;
+        top: 10px;
+        right: 15px;
+    }
+    
+    /* Improve withdrawal section for mobile */
+    .withdrawal-section {
+        padding: 0.5rem;
+    }
+    
+    .withdrawal-form {
+        margin-bottom: 2rem;
+    }
+    
+    #withdrawal-form button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 0.5rem;
+    }
+    
+    .withdrawal-item {
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+        border-radius: 8px;
+    }
+    
+    .withdrawal-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .withdrawal-status {
+        align-self: flex-start;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

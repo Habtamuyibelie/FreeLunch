@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeLunch Ethiopia - Win Prizes!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>FreeLunch <span class="ethiopia">Ethiopia</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#winners">Winners</a></li>
+                <li><a href="#" id="login-btn">Login</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Win Cash & Prizes Daily!</h2>
+            <p>Invite friends, subscribe to channels, and earn entries for our daily draws.</p>
+            <div class="countdown-container">
+                <h3>Next Draw In:</h3>
+                <div id="countdown">
+                    <div>
+                        <span id="hours">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div>
+                        <span id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div>
+                        <span id="seconds">00</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+            <button id="get-started-btn" class="btn-primary">Get Started</button>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>Sign Up</h3>
+                <p>Create your free account in seconds</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3>Invite Friends</h3>
+                <p>Share your referral link to earn entries</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h3>Subscribe</h3>
+                <p>Subscribe to partner channels for more entries</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Win Prizes</h3>
+                <p>Get selected in our transparent daily draws</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="prizes" class="prizes">
+        <h2>Current Prizes</h2>
+        <div class="prize-cards">
+            <div class="prize-card">
+                <div class="prize-amount">1000 ETB</div>
+                <div class="prize-title">Daily Draw</div>
+                <div class="prize-desc">One winner every day</div>
+            </div>
+            <div class="prize-card featured">
+                <div class="prize-amount">5000 ETB</div>
+                <div class="prize-title">Weekly Draw</div>
+                <div class="prize-desc">Every Sunday at 8PM</div>
+            </div>
+            <div class="prize-card">
+                <div class="prize-amount">20000 ETB</div>
+                <div class="prize-title">Monthly Draw</div>
+                <div class="prize-desc">Last day of each month</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="winners" class="winners">
+        <h2>Recent Winners</h2>
+        <div class="winners-list" id="winners-container">
+            <!-- Winners will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="login-tab">Login</button>
+                <button class="tab-btn" data-tab="register-tab">Register</button>
+            </div>
+            <div id="login-tab" class="tab-content active">
+                <h2>Welcome Back</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
+            <div id="register-tab" class="tab-content">
+                <h2>Create Account</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-phone">Phone Number</label>
+                        <input type="tel" id="register-phone" placeholder="+251 9X XXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm">Confirm Password</label>
+                        <input type="password" id="register-confirm" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal (will be shown after login) -->
+    <div id="dashboard-modal" class="modal">
+        <div class="modal-content dashboard">
+            <span class="close">&times;</span>
+            <h2>Your Dashboard</h2>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <h3 id="user-name">User Name</h3>
+                    <p id="user-email">user@example.com</p>
+                </div>
+                <button id="logout-btn" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn dashboard-tab active" data-tab="dashboard-main-tab">Dashboard</button>
+                <button class="tab-btn dashboard-tab" data-tab="withdrawal-tab">Withdraw Winnings</button>
+                <button class="tab-btn dashboard-tab" data-tab="settings-tab">Settings</button>
+            </div>
+            
+            <div id="dashboard-main-tab" class="tab-content active">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-value" id="entries-count">0</div>
+                        <div class="stat-label">Total Entries</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="referrals-count">0</div>
+                        <div class="stat-label">Referrals</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="subscriptions-count">0</div>
+                        <div class="stat-label">Subscriptions</div>
+                    </div>
+                </div>
+                <div class="referral-section">
+                    <h3>Your Referral Link</h3>
+                    <div class="referral-link-container">
+                        <input type="text" id="referral-link" readonly>
+                        <button id="copy-link" class="btn-secondary"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p>Share this link to earn more entries!</p>
+                </div>
+                <div class="subscription-section">
+                <h3>Earn More Entries</h3>
+                <div class="youtube-channels">
+                    <div class="channel">
+                        <img src="images/habtechplc.jpg" alt="HabTechPlc">
+                        <div class="channel-info">
+                            <h4>HabTechPlc</h4>
+                            <button class="subscribe-btn" data-channel="habtech">Subscribe</button>
+                        </div>
+                    </div>
+                 
+                    <div class="channel">
+                        <img src="images/donkeyTube.jpg" alt="Comedian Eshetu">
+                        <div class="channel-info">
+                            <h4>Comedian Eshetu</h4>
+                            <button class="subscribe-btn" data-channel="comedianeshetu">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="channel">
+                        <img src="images/etubers.jpg" alt="ETubers">
+                        <div class="channel-info">
+                            <h4>ETubers</h4>
+                            <button class="subscribe-btn" data-channel="etubers">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="channel">
+                        <img src="images/chillflow.jpg" alt="Chill Flow">
+                        <div class="channel-info">
+                            <h4>Chill Flow</h4>
+                            <button class="subscribe-btn" data-channel="chillflow">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="channel">
+                        <img src="images/abelbrhanu.jpg" alt="Abel Birhanu">
+                        <div class="channel-info">
+                            <h4>Abel Birhanu</h4>
+                            <button class="subscribe-btn" data-channel="abelbirhanu">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="channel">
+                        <img src="images/Edit-Like.jpg" alt="Edit Like">
+                        <div class="channel-info">
+                            <h4>Edit Like</h4>
+                            <button class="subscribe-btn" data-channel="editlike">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="withdrawal-tab" class="tab-content">
+                <div class="withdrawal-section">
+                    <h3>Withdraw Your Winnings</h3>
+                    <p>Withdraw your prize money directly to your mobile wallet using your phone number.</p>
+                    
+                    <div class="withdrawal-stats">
+                        <div class="stat-card">
+                            <div class="stat-value" id="available-balance">0 ETB</div>
+                            <div class="stat-label">Available Balance</div>
+                        </div>
+                    </div>
+                    
+                    <form id="withdrawal-form">
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="tellebir" name="payment-method" value="tellebir" checked>
+                                    <label for="tellebir">
+                                        <i class="fas fa-mobile-alt"></i> TelleBir
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="cbebirr" name="payment-method" value="cbebirr">
+                                    <label for="cbebirr">
+                                        <i class="fas fa-university"></i> CBEBirr
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="tel" id="phone-number" placeholder="+251 9X XXX XXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="withdrawal-amount">Amount (ETB)</label>
+                            <input type="number" id="withdrawal-amount" min="100" step="100" required>
+                        </div>
+                        <button type="submit" class="btn-primary" id="withdraw-button">
+                            <i class="fas fa-money-bill-wave"></i> Withdraw Funds
+                        </button>
+                    </form>
+                    
+                    <div class="withdrawal-history">
+                        <h4>Withdrawal History</h4>
+                        <div id="withdrawal-history-container">
+                            <p class="no-withdrawals">No withdrawal history yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="settings-tab" class="tab-content">
+                <div class="settings-section">
+                    <h3>Withdrawal Settings</h3>
+                    <p>Configure your withdrawal preferences to make future withdrawals faster and easier.</p>
+                    
+                    <form id="withdrawal-settings-form">
+                        <div class="form-group">
+                            <label>Default Withdrawal Wallet</label>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="default-tellebir" name="default-payment-method" value="tellebir" checked>
+                                    <label for="default-tellebir">
+                                        <i class="fas fa-mobile-alt"></i> TelleBir
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="default-cbebirr" name="default-payment-method" value="cbebirr">
+                                    <label for="default-cbebirr">
+                                        <i class="fas fa-university"></i> CBEBirr
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="saved-phone-numbers">Saved Phone Numbers</label>
+                            <div id="saved-phone-container">
+                                <!-- Saved phone numbers will be displayed here -->
+                                <p class="no-saved-phones">No saved phone numbers yet.</p>
+                            </div>
+                            <div class="add-phone-section">
+                                <input type="tel" id="new-phone-number" placeholder="+251 9X XXX XXXX">
+                                <button type="button" id="add-phone-btn" class="btn-secondary">
+                                    <i class="fas fa-plus"></i> Add Phone
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="default-withdrawal-amount">Default Withdrawal Amount (ETB)</label>
+                            <input type="number" id="default-withdrawal-amount" min="100" step="100" placeholder="e.g. 500">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="auto-fill-settings">
+                                <span class="checkmark"></span>
+                                Auto-fill withdrawal form with these settings
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" id="save-settings-button">
+                            <i class="fas fa-save"></i> Save Settings
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>FreeLunch <span class="ethiopia">Ethiopia</span></h2>
+                <p>Win prizes daily by participating in our draws!</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+                    <li><a href="#winners">Winners</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@etiotelecom.et</p>
+                <p><i class="fas fa-phone"></i> +251 94 123 4567 (Safaricom Ethiopia)</p>
+                <p><i class="fas fa-phone"></i> +251 91 987 6543 (Ethio Telecom)</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FreeLunch Ethiopia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
